@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Navigation } from './components/navigation/Navigation.jsx';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Home } from './pages/home/Home.jsx';
+import { About } from './pages/about/About.jsx';
+import { TopCities } from './pages/topCity/TopCities.jsx';
+import { Testimonial } from './pages/testimonial/Testimonial.jsx';
+import { Subscription } from './pages/subscription/Subscription.jsx';
+import { Footer } from './components/footer/Footer.jsx';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Navigation />
+        <Home />
+        <About />
+        <TopCities />
+        <Testimonial />
+        <Subscription />
+        <Footer />
+      </Router>
+    </>
   );
-}
+};
 
 export default App;
